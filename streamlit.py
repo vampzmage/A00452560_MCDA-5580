@@ -12,7 +12,7 @@ currency_low = st.radio("Currency",currencies).lower()
 parameters = {"vs_currency":currency_low, "days":str(day_selected), "interval":"daily"}
 request = requests.get(url, parameters)
 
-if req.status_code == 200:
+if request.status_code == 200:
   data_back = request.json()
 
 bit_c = pd.DataFrame(data_back["prices"], columns=["date", "prices"])
