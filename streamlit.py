@@ -7,7 +7,7 @@ st.title("Bitcoin Prices")
 url = "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart"
 currencies = ["CAD","USD","INR"]
 currency_low = st.radio("Currency",currencies).lower()
-day_selected = st.slider("No. of days", mini_day = 1, maxi_day = 365)
+day_selected = st.slider("No. of days", min_value = 1, max_value = 365)
 parameters = {"vs_currency":currency_low, "days":str(day_selected), "interval":"daily"}
 request = requests.get(url, parameters)
 
