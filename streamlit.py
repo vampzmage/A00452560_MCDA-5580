@@ -17,7 +17,7 @@ bit_c["date"] = pd.to_datetime(bit_c["date"], unit="ms")
 bit_c.sort_values(by="date", inplace=True)
 bit_c = bit_c.set_index("date")
 st.line_chart(bit_c)
-avg_price = bit_c["price"].mean()
+avg_price = str(bit_c["price"].mean())
 text = "Average price during this time was "+avg_price+" "+currency_low.upper()
 st.write(text)
 
